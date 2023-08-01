@@ -2,9 +2,10 @@
 In-House File and Directory Search Engine
 
 set up a cron job scheduler on Linux following these steps:
-open the cron table 
-add a new line to specify the cron job schedule and the command you want to run as follows
-* * * * * command_to_be_executed
+open the cron table. 
+add a new line to specify the cron job schedule and the command you want to run as follows.
+
+* * * * * command_to_be_executed.
 - - - - -
 | | | | |
 | | | | ----- Day of the week (0 - 7) (Sunday is both 0 and 7)
@@ -12,6 +13,7 @@ add a new line to specify the cron job schedule and the command you want to run 
 | | --------- Day of the month (1 - 31)
 | ----------- Hour (0 - 23)
 ------------- Minute (0 - 59)
+
 then save crontab
 eg: 0 0 * * * /usr/bin/python3 /path/to/your_script.py >> /path/to/your/logfile.log 2>&1     //cron job will run at 00:00 (midnight) every day
       
