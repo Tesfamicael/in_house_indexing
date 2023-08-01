@@ -9,19 +9,18 @@ set up a cron job scheduler on Linux following these steps:
 open the cron table. 
 add a new line to specify the cron job schedule and the command you want to run as follows.
 * * * * * command_to_be_executed.
-- - - - -
-| | | | |
-| | | | ----- Day of the week (0 - 7) (Sunday is both 0 and 7)
-| | | ------- Month (1 - 12)
-| | --------- Day of the month (1 - 31)
-| ----------- Hour (0 - 23)
-------------- Minute (0 - 59)
+* Minute (0 - 59) :
+* Hour (0 - 23) :
+* Day of the month (1 - 31) :
+* Month (1 - 12) :
+* Day of the week (0 - 7) (Sunday is both 0 and 7) 
 then save crontab
-eg: 0 0 * * * /usr/bin/python3 /path/to/your_script.py >> /path/to/your/logfile.log 2>&1     //cron job will run at 00:00 (midnight) every day
+# eg: to set the cron job to run at 00:00 (midnight) every day
+0 0 * * * /usr/bin/python3 /path/to/your_script.py >> /path/to/your/logfile.log 2>&1     
 
 # Configure meilisearch API      
-download meiliSearch
-Set Executable Permissions: chmod +x meilisearch
+download meiliSearch ;
+Set Executable Permissions: chmod +x meilisearch ;
 Run MeiliSearch: ./meilisearch --master-key API_KEY   //with master key argument
 
 # Provide Directory path       
